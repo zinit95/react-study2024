@@ -1,8 +1,7 @@
 import React from "react";
 
-class Hello extends React.Component{
-  render(){
-
+class Hello extends React.Component {
+  render() {
     return (
       <>
         <h1>와르르맨션</h1>
@@ -13,22 +12,3 @@ class Hello extends React.Component{
 }
 
 export default Hello;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
