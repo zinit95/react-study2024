@@ -31,6 +31,21 @@ const ExpenseItem = ({ date, title, price: exPrice }) => {
   // 원화 표기법으로 변환
   const formattedPrice = new Intl.NumberFormat('ko-KR').format(exPrice);
 
+  //리턴 전이라서 이렇게 작성하면 안됨 에러코드
+  // const $btn = document.getElementById('btn');
+  // console.log('btn', $btn);
+
+  //이벤트 핸들러 선언
+  const clickHandler = e => {
+    console.log('클릭함');
+    console.log(e.target.previousElementSibling.firstElementChild.textContent);
+
+    // const $price = document.querySelectorAll('.expense-item__price');
+    // console.log($price);
+  }
+
+  //리엑트에서는 onClick={clickHandler} 케멀케이스로 가야 됨
+  //onClick={clickHandler} 에서 clickHandler() 호출 하면 안됨.
   return (
       <Card className='expense-item'>
         <ExpenseDate exDate={date} />
@@ -38,6 +53,8 @@ const ExpenseItem = ({ date, title, price: exPrice }) => {
           <h2>{title}</h2>
           <div className='expense-item__price'>{formattedPrice}원</div>
         </div>
+        <button id='btn' onClick={clickHandler}>1빠튼1</button>
+        <button id='btn2' onMouseOver={e=>{alert('우앙');}}>2빠튼2</button>
       </Card>
   )
 }
