@@ -1,6 +1,12 @@
+//리액트에서는 .js 를 생략행냐 됨
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import Hello from './components/Hello'; 
+import Bye from './components/Bye';
+import Great from './components/Great';
+
+
 //리액트 컨포넌트
 function App() {
 
@@ -15,20 +21,30 @@ function App() {
   const hell = '안녕안녕';
   return ( //아래는 html문법이 아니고 jsx 문법이다, return 에는 여러 태그를 보낼 수 없다 부모태그로 감싸줘야 된다,
     <>
-    <div>
-      <div className="App">
-        <h1>{hell}</h1>
-        <h1>안녕하시나요?</h1>
-        {$h2}
-        {$h3}
-      </div>
-      <div className='noname'>
-        <input type="text" />
-        <label htmlFor=''></label>
-      </div>
-    </div>
+    <Bye />
+    <Hello />
+    <Bye />
+    <Great />
   </>  
   );
 }
 
 export default App;
+
+/*
+return (
+  <div>
+    <div className="App">
+      <h1>{hell}</h1>
+      <h1>안녕하시나요?</h1>
+      {$h2}
+      {$h3}
+    </div>
+    <div className='noname'>
+      <input type="text" />
+      <label htmlFor=''></label>
+    </div>
+  </div>
+);
+*/
+
