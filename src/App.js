@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import ExpenseList from './components/expenses/ExpenseList';
 import Greet from './components/Greet';
-import Counter from './components/practice/Counter';
+// import Counter from './components/practice/Counter';
+import NewExpense from './components/new-expense/NewExpense';
 
 const App = () => {
 
@@ -27,7 +28,7 @@ const App = () => {
 
   return (
     <>
-    <Counter />
+      <NewExpense />
       <ExpenseList expenses={expenses} />
     </>
   );
