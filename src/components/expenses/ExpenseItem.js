@@ -60,7 +60,7 @@ const ExpenseItem = ({ date, title, price: exPrice }) => {
     setItemTitle('쨔장므ㅜㄴ');
   }
 
-  console.log('렌더링 전');
+  //console.log('렌더링 전');
 
   //리엑트에서는 onClick={clickHandler} 케멀케이스로 가야 됨
   //onClick={clickHandler} 에서 clickHandler() 호출 하면 안됨.
