@@ -10,7 +10,7 @@ const App = () => {
     {
       title: '치킨먹음',
       price: 30000,
-      date: new Date(2023, 6 - 1, 3)
+      date: new Date(2023, 8 - 1, 3)
     },
     {
       title: '족발먹음',
@@ -20,42 +20,42 @@ const App = () => {
     {
       title: '헬스장등록',
       price: 300000,
-      date: new Date(2021, 6 - 1, 12)
+      date: new Date(2021, 10 - 1, 12)
     },
     {
       title: '핏쨔',
-      price: 40000,
-      date: new Date(2020, 4 - 1, 9)
+      price: 22000,
+      date: new Date(2020, 11 - 1, 9)
     },
     {
       title: '시원한 물회',
-      price: 78000,
-      date: new Date(2019, 9 - 1, 7)
+      price: 39000,
+      date: new Date(2019, 12 - 1, 7)
     },
     {
       title: '오징어회',
-      price: 78000,
-      date: new Date(2024, 9 - 1, 7)
+      price: 25000,
+      date: new Date(2024, 3 - 1, 7)
     },
     {
       title: '우럭 ',
-      price: 78000,
-      date: new Date(2022, 9 - 1, 7)
+      price: 30000,
+      date: new Date(2022, 6 - 1, 7)
     },
     {
       title: '광어 ',
-      price: 78000,
-      date: new Date(2019, 9 - 1, 7)
+      price: 25000,
+      date: new Date(2019, 2 - 1, 7)
     },
     {
       title: '매운탕 ',
-      price: 78000,
-      date: new Date(2019, 9 - 1, 7)
+      price: 9000,
+      date: new Date(2019, 3 - 1, 7)
     },
     {
       title: '회덮밥 ',
-      price: 78000,
-      date: new Date(2024, 9 - 1, 7)
+      price: 8500,
+      date: new Date(2024, 1 - 1, 7)
     },
   ];
 
