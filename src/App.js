@@ -27,20 +27,8 @@ const App = () => {
   // CouseItem에게 전달할 함수
   const deleteGoalHandler = (id) => {
     // console.log('id: ', id);
-
-    let index = -1;
-    for (let i = 0; i < goals.length; i++) {
-      if (goals[i].id === id) {
-        index = i;
-        break;
-      }
-    }
-    // console.log('index: ', index);
-
-    goals.splice(index, 1);
-
-    setGoals([...goals]);
-
+    // goals.splice(goals.findIndex(g => g.id === id), 1);
+    setGoals(goals.filter(g => g.id !== id));
   };
 
   return (
