@@ -59,12 +59,24 @@ const App = () => {
     },
   ];
 
-  // 배열을 상태변수로 관리
-  const [expenseList, setExpenseList] = useState(expenses); 
-
+  //배열을 상태변수로 관리 
+  const [expenseList, setExpenseList] = useState(expenses);
 
   // ExpenseForm에게 내려보낼 함수
-  const onAddExpense = (userInput) => setExpenseList([...expenseList, userInput]);
+  const onAddExpense = (userInput) => {
+    console.log('App.js 가 내려보낸 함수 호출!');
+    // console.log(userInput);
+
+    expenseList.push(userInput); //expenseList 기본 배열에 새로운 userInput을 push
+    //const NewExpenseList = [...expenseList]; //expenseList 복사    
+    //setExpenseList(NewExpenseList); //새로운 배열을 만들어서 변경감지 
+    //const NewExpenseList = [...expenseList, userInput]; //expenseList 복사 하고 userInput 에 추가
+    
+    setExpenseList([...expenseList, userInput]);
+
+    //console.log(expenses);
+    console.log(expenseList);
+  };
 
   return (
     <>

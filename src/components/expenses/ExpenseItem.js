@@ -71,10 +71,11 @@ const ExpenseItem = ({ date, title, price: exPrice }) => {
           <h2>{itemTitle}</h2>
           <div className='expense-item__price'>{formattedPrice}원</div>
         </div>
-        <button id='btn' onClick={clickHandler}>제목수정</button>
+        {/* <button id='btn' onClick={clickHandler}>제목수정</button> */}
         {/* <button id='btn2' onMouseOver={e=>{alert('우앙');}}>2빠튼2</button> */}
       </Card>
   )
 }
 
 export default ExpenseItem;
+
