@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
-let timer;
+import React, { useRef, useState } from 'react';
+
 const TimerChallenge = ({ title, targetTime }) => {
+
+  // timer를 ref변수로 관리
+  const timer = useRef();
 
   // 타이머가 시작되었는지를 확인하는 상태값
   const [timerStarted, setTimerStarted] = useState(false);
@@ -8,22 +11,17 @@ const TimerChallenge = ({ title, targetTime }) => {
   // 타겟시간이 종료되었는지 여부
   const [timerExpired, setTimerExpired] = useState(false);
 
-  let timer;
   const startHandler = e => {
 
-    timer = setTimeout(() => {
+    timer.current = setTimeout(() => {
       setTimerExpired(true);
     }, targetTime * 1000);
 
     setTimerStarted(true);
   };
 
-  // 이 상황에 stop이 작동하지 않는 이유는 
-  // start시의 timer변수가 지역변수이기 때문에 
-  // 상태변수의 setter호출시 리렌더링이 되면서 새로운 지역변수로 바뀜
-  // stop시의 timer와 start시의 timer는 다른 변수다.
   const stopHandler = e => {
-    clearTimeout(timer);
+    clearTimeout(timer.current);
   };
 
   return (
