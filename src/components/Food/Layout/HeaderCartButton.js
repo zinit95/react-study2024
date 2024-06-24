@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CartIcon from './CartIcon';
 import styles from './HeaderCartButton.module.scss';
+import CartContext from '../../../store/cart-context';
 
 const HeaderCartButton = ({ onShow }) => {
+
+  const { cartItems } = useContext(CartContext);
+
+  // 장바구니에 담으면 수량 표시 
+  const numberOfCart = cartItems.reduce((accum, current) => { //accum : 누적자 
+    //console.log('accum: ', accum);
+    //console.log('current: ', current);
+    return accum + current.amount;
+  }, 0);
 
   const {button, icon, badge} = styles;
 
@@ -12,7 +22,7 @@ const HeaderCartButton = ({ onShow }) => {
         <CartIcon />
       </span>
       <span>My Cart</span>
-      <span className={badge}>3</span>
+      <span className={badge}>{numberOfCart}</span>
     </button>
   );
 };
