@@ -7,7 +7,7 @@ const HeaderCartButton = ({ onShow }) => {
 
   const { cartItems } = useContext(CartContext);
 
-  // 장바구니에 담으면 수량 표시 
+  // 헤더에 총 수량 표시 
   const numberOfCart = cartItems.reduce((accum, current) => { //accum : 누적자 
     //console.log('accum: ', accum);
     //console.log('current: ', current);
