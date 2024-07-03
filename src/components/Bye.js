@@ -1,5 +1,5 @@
 import React from "react";
-//rafc 기본 컴포넌트 단축키 
+
 function Bye() {
 
   return (

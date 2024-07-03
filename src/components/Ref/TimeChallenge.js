@@ -31,7 +31,7 @@ const TimerChallenge = ({ title, targetTime }) => {
     dialog.current.showModal();
   };
 
-  //남은시간 리셋 함수
+  // 남은 시간 리셋 함수
   const resetHandler = () => setTimeRemaining(targetTime * 1000);
 
   return (
@@ -40,7 +40,7 @@ const TimerChallenge = ({ title, targetTime }) => {
         ref={dialog}
         targetTime={targetTime}
         remainingTime={timeRemaining}
-        onReset= {resetHandler}
+        onReset={resetHandler}
       />
       <section className="challenge">
         <h2>{title}</h2>

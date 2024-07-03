@@ -4,15 +4,15 @@ import Button from '../UI/Button';
 
 const CourseInput = ({ onAdd }) => {
 
-  // console.log('s', styles);
-  
-  const {invalid, 'form-control' : formControl} = styles;
+  // console.log('s: ', styles);
+
+  const { invalid, "form-control": formControl } = styles;
 
   // 목표 인풋에 입력한 값
   const [enteredText, setEnteredText] = useState('');
 
   // 입력값 검증을 통과했는지 여부를 상태관리
-  const [isValid, setIsValid] = useState(false);
+  const [isValid, setIsValid] = useState(true);
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
@@ -69,7 +69,7 @@ const CourseInput = ({ onAdd }) => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className={`${formControl} ${isValid ? 'invalid' : ''}`}>
+      <div className={`${formControl} ${!isValid ? invalid : ''}`}>
         <label>나의 목표</label>
         <input
           type="text"

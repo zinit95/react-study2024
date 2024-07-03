@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
 
-const ExpenseForm = ({onAdd, onCancel}) => {
-  //입력칸에 있는 3개의 값을 상태값으로 관리
+const ExpenseForm = ({ onAdd, onCancel }) => {
+
+  // 입력칸에 있는 3개의 값을 각각의 상태값으로 관리
   // const [title, setTitle] = useState('');
   // const [price, setPrice] = useState(0);
   // const [date, setDate] = useState(null);
 
-  //입력칸에 있는 3개의 값을 하나의 상태값으로 관리
+  // 입력칸에 있는 3개의 값을 하나의 상태값으로 관리
   const [userInput, setUserInput] = useState({
-    title : '',
-    price : '',
-    date : ''
+    title: '',
+    price: '',
+    date: ''
   });
 
 
@@ -24,74 +25,64 @@ const ExpenseForm = ({onAdd, onCancel}) => {
     return `${year}-${month}-${day}`;
   }
 
-    // 제목이 입력되었을 때 발생하는 이벤트 핸들러
-    const titleChangeHandler = e => {
+  // 제목이 입력되었을 때 발생하는 이벤트 핸들러
+  const titleChangeHandler = e => {
 
-      // userInput.title = e.target.value; (X)
+    // userInput.title = e.target.value; (X)
 
-      //객체나 배열 상태로 관리되는 상태닶은 상태 변경시 새로운 객체나 배열을 setter에 전달해야 함
-      
+    // 객체나 배열상태로 관리되는 상태값은 
+    // 상태변경시 새로운 객체나 배열을 setter에 전달해야 함
+    setUserInput(prevUserInput => ({
+      ...prevUserInput,
+      title: e.target.value
+    }));
+  };
 
-      setUserInput(prevUserInput => ({
-        ...prevUserInput,
-        title: e.target.value
-      }));
-    };
-  
-  
-    // 가격이 입력되었을 때 발생하는 이벤트 핸들러
-    const priceChangeHandler = e => {
-      //setPrice(+e.target.value);
+  // 가격이 입력되었을 때 발생하는 이벤트 핸들러
+  const priceChangeHandler = e => {
 
-      setUserInput({
-        ...userInput, //기존 객체에 있는거 복사하고 변경만 
-        // title : userInput.title,
-        price : e.target.value
-        // date : userInput.date
-      });
-    };
-  
-    // 날짜가 입력되었을 때 발생하는 이벤트 핸들러
-    const dateChangeHandler = e => {
-      //setDate(e.target.value);
-      setUserInput({
-        ...userInput, //기존 객체에 있는거 복사하고 변경만 
-        // title : userInput.title,
-        // price : userInput.price,
-        date : e.target.value
-      });
-    };
+    setUserInput({
+      ...userInput,
+      price: +e.target.value
+    });
+  };
 
+  // 날짜가 입력되었을 때 발생하는 이벤트 핸들러
+  const dateChangeHandler = e => {
+    setUserInput({
+      ...userInput,
+      date: e.target.value
+    });
+  };
 
-  //폼 전송 이벤트 핸들러 
-  const submitHandler = e =>{
-    e.preventDefault(); //폼 전송 방지
+  // 폼 전송 이벤트 핸들러
+  const submitHandler = e => {
+    e.preventDefault(); // 폼 전송 방지
     // console.log('폼이 전송됨!');
 
-    //지출 내역 객체를 생성 
-    // const NewExpense = {
+    // 지출 내역 객체를 생성
+    // const newExpense = {
     //   title,
     //   price,
     //   date
     // };
-    // console.log(NewExpense);
 
     console.log(userInput);
 
-    //app.js 에게 받은 함수를 호출
+    // App.js에게 받은 함수를 호출
     onAdd({
       ...userInput,
-      date : new Date(userInput.date)
-
+      date: new Date(userInput.date)
     });
 
-    //form input 비우기
+    // form input 비우기
     setUserInput({
-      title : '',
-      price : '',
-      date : ''
+      title: '',
+      price: '',
+      date: ''
     });
-  }
+
+  };
 
   return (
     <form onSubmit={submitHandler}>
